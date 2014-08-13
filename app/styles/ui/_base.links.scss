@@ -1,0 +1,12 @@
+a {
+  color: #2980b9;
+  text-decoration: none;
+  transition: all .3s;
+  &:hover,
+  &:active {
+    color: darken(#2980b9, 10%);
+  }
+}
+.underline {
+  text-decoration: underline;
+}

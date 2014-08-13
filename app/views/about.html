@@ -1,0 +1,116 @@
+<div class="container container--narrow">
+    <article>
+        <header>
+            <h1>About this front end</h1>
+        </header>
+        <h2>CSS</h2>
+        <p>
+            As asked, I have not used a css framework. Otherwise, my choice would have been <a href="https://github.com/inuitcss">Unuit.css</a>.
+            <br/>
+            But some parts of the code are snippets, like the <a href="http://necolas.github.io/normalize.css/">normalize.css</a> or the code to hide element but sill accessible by screen readers from <a href="http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/">HTML5 boilerplate</a>
+            <br/>
+            I've decided to use <a href="http://sass-lang.com/">Sass</a> to split the css files into module, with small task. My main.scss call all these files.
+
+            <br/>
+            I like using prefix to each file to specify the type element we are styling. This usage comes from the <a
+                href="http://bradfrostweb.com/blog/post/atomic-web-design/">Atomic Design</a> by <a href="http://bradfrostweb.com/">Brad Frost</a>, but I use the same notation than inuit.css.
+
+        </p>
+        <p>
+            For the purpose of this test, I don't use sass variable or mixins, the goal wasn't doing a new framework, but nevertheless coding css <em>as if it was a big project</em>.
+
+        </p>
+
+        <h3>BEM</h3>
+        <p>Block Element Modifier is the notation that I've used for my classes.</p>
+        <h3>OOCSS</h3>
+        <p>I like also add class to an element, to follow the principle of OOCSS, define by <a href="https://github.com/stubbornella/oocss/wiki">Nicole Sullivan</a>.<br/>
+        <em>It’s an approach for writing CSS that’s fast, maintainable, and standards-based.</em>
+            <br/>Inuit.css use these two approach for his framework: <em><a href="https://github.com/inuitcss/getting-started">inuitcss is a powerful, Sass-based, BEM, OOCSS framework designed with scalability and performance in mind.</a></em>
+            <br/>
+            Performance is the main goal when I'm writing CSS, because I try to give the best experience to the customer.
+        </p>
+        <hr>
+        <h2>Images</h2>
+        <p>A sprite was given, so I use this image file, but if I have the .psd of the design, I will use two different files, one to serve the regular screen, the other to serve the HDPI screens (Retina).
+            <br/>
+            For the icons, a best solution is to create a font, with a tool like <a href="icomoon.io/app/">icomoon</a>, so these icon will be retina ready.
+        </p>
+        <p>I use multiple backgrounds on html element, and use most of the time the <em>before, after properties</em> to add image to elements.
+            <br/>
+            When is not possible, on the input element by example, I use the label element to put the correct image for the field validation.
+        </p>
+        <p>Images are optimized with a grunt task when I deploy the code.</p>
+        <p>We can also put the image in the css files, like the logo with the Data URIs technology (but <a href="http://www.mobify.com/blog/data-uris-are-slow-on-mobile/">serve regular image for smarphone</a>).</p>
+        <h2>Tools</h2>
+        <h3>Grunt</h3>
+        <p>I like working with <a href="http://gruntjs.com/">Grunt</a>, to run some tasks automatically. <br/>
+            My Sass file are watched, my Javascript files are checked by JSHint, the images are optimized, etc. <br/>
+            Once you build the static version of the website, you have versioning of the files (i.e. the name of the file is like main.b4d4abb3.css), they are concatenated and minified.
+            </p>
+        <h3>Chosen</h3>
+        <p>All the form use regular html element dedicated to this task. So the mobil version can use the native form elements. <br/>
+        The buttons for the choice of the sex are radio button for example, but styling the select element is not easy.
+            <br/>
+            So I decide to use a jQuery plugin, to give the same look to each browser and adding image inside.<br/>
+            The <a href="http://harvesthq.github.io/chosen/">Chosen plugin</a> keep the regular select, but use a html dropdown to select an element. You still can reach an element by typing his name, so it's a good UX I think.
+        </p>
+        <p>I have attached this plugin to the select element only at a specific width, with <em>matchMedia</em></p>
+        <p>I keep the sprites given by this plugin to show the usage of media queries to call specific file for Retina screens.</p>
+        <p>My usage of jQuery with Angular.js is not the best, I should have used <em>directive</em> I think</p>
+        <hr/>
+        <h2>Assets</h2>
+        <p>With the optimisation in mind, all the assets (images, videos, css, js) must be on CDN so the browser can download multiple items in the same time. Using a CDN has
+            <a href="http://www.sitepoint.com/7-reasons-to-use-a-cdn/">multiple advantages</a>.</p>
+        <p>With Grunt, the js files are concatenated and minify. Like the css files. <br/>
+        This way, the number of http request are reduced, it's a method to have a faster website, because the number of files than the browser can download in the same time is low. Another example of benefit of using CDN.</p>
+        <p>I use a file configuration for the server (for Apache here). In this cas, I have the <a href="https://github.com/h5bp/html5-boilerplate/blob/master/.htaccess">.htaccess made for the html5 boilerplate</a>.
+            <br/>
+        With this configuration, the assets are served gzipped, with expire header in the future, so there are cached.
+        </p>
+        <p>For example, my CSS file is only 5.1KB and for the second load, this file is not downloaded because the browser use the cached version. </p>
+        <p>
+            I've seen lectures from <a href="http://stevesouders.com/">Steve Souders</a> and read his books, so I try to use his work to have the fasted website.
+            <br/>
+            Thanks to his job at Yahoo and Google, we have two great tools to do the fastest website: <a href="https://developer.yahoo.com/yslow/">Yslow</a> and
+            <a href="https://developers.google.com/speed/pagespeed/?hl=fr">PageSpeed</a>.
+        </p>
+        <hr/>
+        <h2>Testing</h2>
+        <p>
+            On my computer, I have Firefox, Chrome, Safari, Opera, iOS simulator. For IE, I use Virtual Box with different image to have different IE. But In this cas, I've use
+            <a href="www.browserstack.com">Browserstack</a> with also Android simulator. <br/>
+            The development version of Chrome (Canary) has also a great tool to emulate device and network.
+        </p>
+        <hr/>
+        <h2>Conclusions</h2>
+        <p>I like working with performance in mind.
+            <br/>
+            Living in West Africa show me the importance to have fast website. We cannot have a fast network and a slow website don't convert user. They prefer to leave the website to have better experience somewhere else.
+            <br/>
+            Even Google use the speed for the <a href="http://googlewebmastercentral.blogspot.be/2010/04/using-site-speed-in-web-search-ranking.html">ranking of his result</a>
+
+
+        </p>
+        <p>I don't do website for my ego, but to give the best experience to the visitors of the website.
+            <br/>
+            Using the good html is important for this task, even if this choice implies more works.
+        </p>
+        <p>
+            Have only a jpg instead of a .psd file is not easy. You can't have the font-family, size, color. <br/>
+            Zooming inside the design to see the details is not possible. <br/>
+            So working in collaboration with the designer is important, because there is always some questins you have to ask.
+            <br/>
+
+
+        </p>
+        <ul class="list-bare">
+            <li>The rays background must be fixed?</li>
+            <li>What is the look when an input text is focused?</li>
+            <li>Animation for button hover?</li>
+            <li>etc</li>
+        </ul>
+        <p>when you do the front end, you are between the design and the developers. You have to talk with these people</p>
+    </article>
+
+</div>

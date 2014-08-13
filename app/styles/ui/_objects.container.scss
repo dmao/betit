@@ -1,0 +1,10 @@
+.container {
+  margin: 0 auto;
+  max-width: 56.250em; // 900px
+}
+.container--narrow {
+  max-width: 45em;
+}
+.container--small {
+  max-width: 23.125em; // 365px doesn't work, the text 'confirm password' is too wide, so I've increased this value to 370px
+}

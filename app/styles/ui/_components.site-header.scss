@@ -1,0 +1,72 @@
+.site-header {
+  padding: $spacing-unit 0 0 0;
+}
+.logo {
+  background: url("../images/bg/sign_up_sprite.png") no-repeat -134px -240px ;
+  width: 126px;
+  height: 76px;
+  display: block;
+  margin: 0 auto 32px auto;
+  position: relative;
+  &:after {
+      content: "";
+      background: url("../images/bg/sign_up_sprite.png") no-repeat 0 -230px;
+      width: 59px;
+      height: 46px;
+      position: absolute;
+      top: 55px;
+      right: -69px;
+  }
+}
+
+// DESKTOP VERSION
+
+// at the value of 801px , the desktop version comes
+@media screen and (min-width: 801px) {
+  .site-header {
+    padding: 16px 0 0 0;
+    position: relative;
+    &:before,
+    &:after {
+      position: absolute;
+      background-image: url("../images/bg/sign_up_sprite.png");
+      content: "";
+    }
+    // balloon
+    &:before {
+      right: 38px;
+      top: 0;
+      width: 233px;
+      height: 233px;
+      background-position: -544px 0;
+    }
+    // cloud right
+    &:after {
+      right: 0;
+      top: 96px;
+      width: 99px;
+      height: 86px;
+      background-position: -560px -265px;
+    }
+  }
+
+  .logo {
+    background: url("../images/bg/sign_up_sprite.png") no-repeat -134px -240px ;
+    width: 126px;
+    height: 76px;
+    display: block;
+    margin: 0;
+    position: relative;
+    &:after {
+      content: "";
+      background: url("../images/bg/sign_up_sprite.png") no-repeat 0 0;
+      width: 175px;
+      height: 78px;
+      position: absolute;
+      top: 100%;
+      left: 100%;
+    }
+  }
+}
+
+

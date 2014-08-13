@@ -1,0 +1,28 @@
+.btn {
+  display: inline-block;
+  font: inherit;
+  text-align: center;
+  border: none;
+  margin:  0;
+  cursor: pointer;
+  background: #97bf80;
+  color: #fff;
+  border-radius: 4px;
+  transition: all .3s;
+  &:hover {
+    background: darken(#97bf80, 10%);
+  }
+  &[disabled] {
+    background: lighten(#97bf80, 10%);
+  }
+}
+.btn--full {
+  width: 100%;
+}
+.btn--large {
+  font-size: 1.250em;
+  line-height: 46px;
+  @media screen and (min-width: 801px) {
+    font-size: 1em;
+  }
+}

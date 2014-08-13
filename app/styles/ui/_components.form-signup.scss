@@ -1,0 +1,206 @@
+.signup-form {
+  position: relative;
+}
+.signup-form__legend {
+  width: 100%;
+  margin-bottom: 32px;
+  & > span {
+    background: url("../images/bg/sign_up_sprite.png") no-repeat -318px -240px ;
+    width: 229px;
+    height: 90px;
+    margin: 0 auto;
+    display: block;
+    @media screen and (min-width: 801px) {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        background: url("../images/bg/sign_up_sprite.png") no-repeat -180px 0 ;
+        width: 105px;
+        height: 105px;
+        top: 70px;
+        right: -125px;
+      }
+    }
+  }
+
+
+}
+.secondary-form {
+  position: absolute;
+  left: -99999px;
+  &.secondary-form--visible {
+    left: 0;
+    position: relative;
+  }
+}
+.custom-radio {
+  margin-top: 12px;
+}
+.radio-label {
+  padding: 0 4px;
+}
+@media screen and (min-width: 801px) {
+  .signup-form {
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url("../images/bg/sign_up_sprite.png");
+      background-repeat: no-repeat;
+    }
+    &:before {
+      width: 34px;
+      height: 78px;
+      background-position: -400px 0;
+      top: 238px;
+      left: -45px;
+    }
+    &:after {
+      width: 60px;
+      height: 94px;
+      background-position: 0 -231px;
+      bottom: 45px;
+      right: -65px;
+    }
+  }
+  .secondary-form {
+    position: relative;
+    left: 0;
+  }
+  .icons-form {
+    background-image: url("../images/bg/sign_up_sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    & + input {
+      padding: 8px 14px 8px 35px;
+    }
+  }
+  .icon-user {
+    background-position: -60px -150px;
+  }
+  .icon-mail {
+    background-position: -60px -174px;
+  }
+  .icon-password {
+    background-position: -92px -179px;
+  }
+  .icon-address {
+    background-position: -2px -151px;
+  }
+  .custom-radio {
+    margin-top: 0;
+  }
+  .radio-sex {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    &:checked {
+      & + .radio-label span {
+        left: 0;
+        opacity: 1;
+      }
+      & + .radio-label--male {
+        background-position: -134px -144px;
+      }
+      & + .radio-label--female {
+        background-position: -193px -188px;
+      }
+    }
+  }
+  .radio-label {
+    background-image: url("../images/bg/sign_up_sprite.png");
+    background-repeat: no-repeat;
+    width: 59px;
+    height: 34px;
+    margin-top: 1px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    &:hover {
+      span {
+        left: 0;
+        opacity: 1;
+      }
+    }
+    span {
+      position: absolute;
+      left: -9999em;
+      top: 37px;
+      font-size: 0.750em;
+      color: #fff;
+      padding-top: 15px;
+      display: block;
+      width: 59px;
+      text-align: center;
+      transition: opacity .2s;
+      &:after {
+        width: 9px;
+        height: 11px;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: calc(50% - 4px);
+        background: url("../images/bg/sign_up_sprite.png") no-repeat -120px -151px;
+      }
+    }
+  }
+  .radio-label--male {
+    background-position: -261px -144px;
+    &:hover {
+      background-position: -134px -188px;
+    }
+  }
+  .radio-label--female {
+    background-position:  -320px -144px;
+    &:hover {
+      background-position:  -193px -144px;
+    }
+  }
+  .signup-form__select-icon {
+    & .chosen-single {
+      padding: 0 0 0 36px;
+      &:after {
+        content: "";
+        position: absolute;
+      }
+    }
+  }
+  .signup-form__calendar {
+    & .chosen-single:after {
+      background: url("../images/bg/sign_up_sprite.png") no-repeat -30px -152px;
+      width: 21px;
+      height: 21px;
+      left: 10px;
+      top: 6px;
+    }
+  }
+  .signup-form__prefix {
+    & .chosen-single:after {
+      background: url("../images/bg/sign_up_sprite.png") no-repeat -89px -151px;
+      width: 25px;
+      height: 25px;
+      left: 7px;
+      top: 5px;
+    }
+  }
+}
+// image in select
+.chose-image-list,
+.chose-image-small {
+  display: inline-block;
+  margin: 0 4px -3px 0;
+}
+

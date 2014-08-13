@@ -1,0 +1,130 @@
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: inline-block;
+}
+.form-fields__item {
+  position: relative;
+  margin: 0 0 12px 0;
+  @media screen and (min-width: 801px) {
+    margin: 0 0 16px 0
+  }
+}
+select {
+  width: 100%;
+}
+.input-text {
+  background-color: #eeeae1;
+  -webkit-appearance: none;
+  border: 1px solid #9b9595;
+  font-family: Arial;
+  padding: 8px 14px;
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow:  inset 0 2px 2px 0 #dcd8cf;
+  line-height: 18px;
+  &:focus {
+    border: 1px solid green;
+    outline: 0;
+/*    & + .label-helper {
+      opacity: 1;
+      right: 5px;
+    }*/
+  }
+  @media screen and (min-width: 801px) {
+    padding: 8px 14px 8px 10px;
+  }
+}
+@media screen and (min-width: 801px) {
+  .input-text--round-right {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+  }
+  .select-round-left.chosen-container-single .chosen-single {
+    border-radius: 4px 0 0 4px ;
+  }
+}
+
+.label-helper {
+  position: absolute;
+  opacity: 0;
+  transition: .2s right, .2s opacity;
+  left: 0;
+  top: 6px;
+  width: 100%;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #9b9595;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #9b9595;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #9b9595;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #9b9595;
+}
+
+// custom chebox for larger screen
+@media screen and (min-width: 801px) {
+  input[type=checkbox] {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+  input[type=checkbox] + label
+  {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    &:before {
+      content: '';
+      position: absolute;
+      left:0;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #9b9595;
+      background: #fff;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+    }
+  }
+  input[type=checkbox]:checked + label:after {
+    background: url("../images/bg/sign_up_sprite.png") no-repeat 0 -197px;
+    width: 18px;
+    height: 12px;
+    position: absolute;
+    content: "";
+    left: 1px;
+    top: 2px;
+  }
+
+}
+
+// FORM VALIDATION ANGULAR
+.input-text.ng-valid + .label-helper {
+  opacity: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    background: url("../images/bg/sign_up_sprite.png") no-repeat 0 -197px;
+    width: 18px;
+    height: 12px;
+    top: 7px;
+    right: 9px;
+  }
+}
+.form-error {
+  color: #bb1f34;
+}
+

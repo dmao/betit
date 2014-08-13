@@ -1,0 +1,241 @@
+<div class="container container--small">
+    <form action="" class="signup-form" name="signupForm" ng-submit="submitForm()" novalidate>
+        <fieldset>
+            <legend class="signup-form__legend">
+                <span>
+                    <span class="is-hidden">Sign up - 100% Bonus</span>
+                </span>
+            </legend>
+            <fieldset>
+
+                <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                    <i class="icons-form icon-user"></i>
+                    <input type="text" class="input-text" id="username" name="username" placeholder="Username" data-ng-model="username" required ng-minlength="3" >
+                    <label for="username" class="label-helper">
+                        <span class="is-hidden">Username</span>
+                    </label>
+                    <div class="error-container ng-hide" ng-show="signupForm.username.$dirty && signupForm.username.$invalid">
+                        <small class="form-error" ng-show="signupForm.username.$error.required">Your username is required.</small>
+                        <small class="form-error ng-hide" ng-show="signupForm.username.$error.minlength">Your username is required to be at least 3 characters</small>
+                    </div>
+                </div>
+
+                <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                    <i class="icons-form icon-mail"></i>
+                    <input type="email" class="input-text" id="email" name="email" placeholder="Email Address" data-ng-model="email" required>
+                    <label for="email" class="label-helper">
+                        <span class="is-hidden">Email address</span>
+                    </label>
+                    <div class="error-container ng-hide" ng-show="signupForm.email.$dirty && signupForm.email.$invalid">
+                        <small class="form-error" ng-show="signupForm.email.$error.required">Your username is required.</small>
+                        <small class="form-error ng-hide" ng-show="signupForm.email.$error.email">That is not a valid email. Please input a valid email.</small>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="grid__item lap-one-half">
+                        <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.password.$invalid && !signupForm.password.$pristine }">
+                            <i class="icons-form icon-password"></i>
+                            <input type="password" class="input-text" id="password" name="password" placeholder="Password" data-ng-model="password" required>
+                            <label for="password" class="label-helper"><span class="is-hidden">Password</span></label>
+                            <div class="error-container ng-hide" ng-show="signupForm.password.$dirty && signupForm.password.$invalid">
+                                <small class="form-error" ng-show="signupForm.password.$error.required">Your password is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item lap-one-half">
+                        <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.passwordConfirm.$invalid && !signupForm.passwordConfirm.$pristine }">
+                            <i class="icons-form icon-password"></i>
+                            <input type="password" class="input-text" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password" data-ng-model="passwordConfirm" required>
+                            <label for="passwordConfirm" class="label-helper"><span class="is-hidden">Confirm Password</span></label>
+                            <div class="error-container ng-hide" ng-show="signupForm.passwordConfirm.$dirty && signupForm.passwordConfirm.$invalid">
+                                <small class="form-error" ng-show="signupForm.passwordConfirm.$error.required">Your confirm password is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <p class="lap-hide"><button class="btn btn--full js-next ">Next</button></p>
+
+            <div class="secondary-form">
+                <fieldset>
+                    <div class="grid">
+                        <div class="grid__item lap-one-half">
+                            <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.firstname.$invalid && !signupForm.firstname.$pristine }">
+                                <i class="icons-form icon-user"></i>
+                                <input type="text" class="input-text" id="firstname" name="firstname" placeholder="Firstname" data-ng-model="firstname" required>
+                                <label for="firstname" class="label-helper"><span class="is-hidden">Firstname</span></label>
+                                <div class="error-container ng-hide" ng-show="signupForm.firstname.$dirty && signupForm.firstname.$invalid">
+                                    <small class="form-error" ng-show="signupForm.firstname.$error.required">Your firstname is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__item lap-one-half">
+                            <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.lastname.$invalid && !signupForm.lastname.$pristine }">
+                                <i class="icons-form icon-user"></i>
+                                <input type="text" class="input-text" id="lastname" name="lastname" placeholder="Lastname" data-ng-model="lastname" required>
+                                <label for="lastname" class="label-helper"><span class="is-hidden">Lastname</span></label>
+                                <div class="error-container ng-hide" ng-show="signupForm.lastname.$dirty && signupForm.lastname.$invalid">
+                                    <small class="form-error" ng-show="signupForm.lastname.$error.required">Your lastname is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-fields__item">
+                        <div class="grid">
+                            <div class="grid__item lap-custom">
+                                <div class="grid">
+                                    <div class="grid__item one-third lap-one-half">
+                                        <select name="year" id="year" class="js-chosen-select signup-form__select-icon signup-form__calendar">
+                                            <option value="2014">YYYY</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid__item one-third lap-one-quarter">
+                                        <select name="month" id="month" class="js-chosen-select">
+                                            <option>MM</option>
+                                            <option value="2014">01</option>
+                                            <option value="2013">02</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid__item one-third lap-one-quarter">
+                                        <select name="day" id="day" class="js-chosen-select">
+                                            <option>DD</option>
+                                            <option value="01">1</option>
+                                            <option value="02">2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__item custom-radio lap-custom-radio">
+                                <!-- all the html are without whitespace, because as we user inline block, with have to remove the withe space between inline element -->
+                                <!--http://css-tricks.com/fighting-the-space-between-inline-block-elements/-->
+                                <input id="male" type="radio" name="gender" value="male" class="radio-sex" data-ng-model="sex"><label for="male" class="radio-label radio-label--male"><span>Male</span></label><input id="female" type="radio" name="gender" value="female" class="radio-sex" data-ng-model="sex"><label for="female" class="radio-label radio-label--female"><span>Female</span></label>
+                                <div class="error-container ng-hide" ng-show="signupForm.lastname.$dirty && signupForm.lastname.$invalid">
+                                    <small class="form-error" ng-show="signupForm.lastname.$error.required">Your lastname is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.address.$invalid && !signupForm.address.$pristine }">
+                        <i class="icons-form icon-address"></i>
+                        <input type="text" class="input-text" id="address" name="address" placeholder="Address" required data-ng-model="address">
+                        <label for="address" class="label-helper"><span class="is-hidden">Address</span></label>
+                        <div class="error-container ng-hide" ng-show="signupForm.address.$dirty && signupForm.address.$invalid">
+                            <small class="form-error" ng-show="signupForm.address.$error.required">Your address is required.</small>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid__item lap-one-third">
+                            <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.postcode.$invalid && !signupForm.postcode.$pristine }">
+                                <input type="text" class="input-text" id="postcode" name="postcode" placeholder="Postcode" required data-ng-model="postcode">
+                                <label for="postcode" class="label-helper"><span class="is-hidden">Postcode</span></label>
+                                <div class="error-container ng-hide" ng-show="signupForm.postcode.$dirty && signupForm.postcode.$invalid">
+                                    <small class="form-error" ng-show="signupForm.postcode.$error.required">Your city is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__item lap-two-thirds">
+                            <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.city.$invalid && !signupForm.city.$pristine }">
+                                <input type="text" class="input-text" id="city" name="city" placeholder="City" required data-ng-model="city">
+                                <label for="city" class="label-helper"><span class="is-hidden">City</span></label>
+                                <div class="error-container ng-hide" ng-show="signupForm.city.$dirty && signupForm.city.$invalid">
+                                    <small class="form-error" ng-show="signupForm.city.$error.required">Your city is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="grid__item two-thirds lap-three-quarters">
+                            <div class="form-fields__item">
+                                <select name="country" id="country" class="js-chosen-select" data-placeholder="Country">
+                                    <option>Country</option>
+                                    <option value="belgium" class="flag flag-bel" data-img-src="images/form/flags/belgium.png">Belgium</option>
+                                    <option value="sweden" class="flag flag-swe" data-img-src="images/form/flags/sweden.png">Sweden</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid__item one-third lap-one-quarter">
+                            <div class="form-fields__item">
+                                <select name="currency" id="currency" class="js-chosen-select">
+                                    <option value="euro">Eur</option>
+                                    <option value="pound">Pound</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="grid grid--narrow">
+                        <div class="grid__item one-quarter lap-one-quarter">
+                            <div class="form-fields__item">
+                                <select name="prefix-phone" id="prefix-phone" class="js-chosen-select signup-form__select-icon signup-form__prefix select-round-left" >
+                                    <option>Prefix</option>
+                                    <option value="+34" selected>+34</option>
+                                    <option value="+33">+33</option>
+                                    <option value="+32">+32</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid__item three-quarters lap-three-quarters">
+                            <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.phone.$invalid && !signupForm.phone.$pristine }">
+                                <input type="tel" class="input-text input-text--round-right" id="phone" name="phone" placeholder="Phone number" required data-ng-model="phone">
+                                <label for="phone" class="label-helper"><span class="is-hidden">Phone Number</span></label>
+                                <div class="error-container ng-hide" ng-show="signupForm.phone.$dirty && signupForm.phone.$invalid">
+                                    <small class="form-error" ng-show="signupForm.phone.$error.required">Your phone number is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-fields__item text--center mb0">
+                        <input id="terms" name="terms" type="checkbox" checked />
+                        <label for="terms" class="text-white">
+                            <small>I have read and agree to the
+                                <a href="#" class="underline text-white">terms & conditions</a>.
+                            </small>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn--full btn--large" ng-disabled="signupForm.$invalid">Sign Up</button>
+
+            </div>
+        </fieldset>
+
+    </form>
+</div>
+
+<script>
+    // some jQuery plugins
+    $(document).ready(function(){
+        console.log( 'ready!' );
+        var large = window.matchMedia( "(min-width: 800px)" );
+        var small = window.matchMedia( "(max-width: 801px)" );
+        if (large.matches) {
+            // window width is at least 800px
+            $('.js-chosen-select').chosen({
+                inherit_select_classes: true,
+                width: '100%'
+            });
+        }
+        if (small.matches) {
+            $('body').on('click', '.js-next', function(){
+                $(this).parent().prev().hide();
+                $(this).hide();
+                $(this).parent().next('.secondary-form').addClass('secondary-form--visible');
+            })
+        }
+
+    });
+
+</script>

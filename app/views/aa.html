@@ -1,0 +1,185 @@
+<div class="container container--small">
+    <form action="" class="signup-form" name="signupForm" ng-submit="submitForm()" novalidate>
+        <fieldset>
+            <legend class="signup-form__legend">
+                <span class="is-hidden">Sign up - 100% Bonus</span>
+            </legend>
+            <fieldset>
+                <div class="form-fields__item" ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                    <i class="icons-form icon-user"></i>
+                    <input type="text" class="input-text" id="username" name="username" placeholder="Username" required >
+                    <label for="username" class="label-helper">Username</label>
+
+                </div>
+                <div class="form-fields__item">
+                    <i class="icons-form icon-mail"></i>
+                    <input type="email" class="input-text" id="email" name="email" placeholder="Email Address">
+                    <label for="email" class="label-helper">Username</label>
+                </div>
+                <div class="grid">
+                    <div class="grid__item lap-one-half">
+                        <div class="form-fields__item">
+                            <i class="icons-form icon-password"></i>
+                            <input type="password" class="input-text" id="password" name="password" placeholder="Password">
+                            <label for="password" class="label-helper">Password</label>
+                        </div>
+                    </div>
+                    <div class="grid__item lap-one-half">
+                        <div class="form-fields__item">
+                            <i class="icons-form icon-password"></i>
+                            <input type="password" class="input-text" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password">
+                            <label for="passwordConfirm" class="label-helper">Confirm Password</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="grid">
+                    <div class="grid__item lap-one-half">
+                        <div class="form-fields__item">
+                            <i class="icons-form icon-user"></i>
+                            <input type="text" class="input-text" id="firstname" name="username" placeholder="Firstname">
+                            <label for="firstname" class="label-helper">Firstname</label>
+
+                        </div>
+                    </div>
+                    <div class="grid__item lap-one-half">
+                        <div class="form-fields__item">
+                            <i class="icons-form icon-user"></i>
+                            <input type="text" class="input-text" id="lastname" name="lastname" placeholder="Lastname">
+                            <label for="lastname" class="label-helper">Lastname</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-fields__item">
+                    <div class="grid">
+                        <div class="grid__item lap-custom">
+                            <div class="grid">
+                                <div class="grid__item one-third lap-one-half">
+                                    <select name="year" id="year" class="js-chosen-select signup-form__select-icon signup-form__calendar">
+                                        <option value="2014">YYYY</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                    </select>
+                                </div>
+                                <div class="grid__item one-third lap-one-quarter">
+                                    <select name="month" id="month" class="js-chosen-select">
+                                        <option>MM</option>
+                                        <option value="2014">01</option>
+                                        <option value="2013">02</option>
+                                    </select>
+                                </div>
+                                <div class="grid__item one-third lap-one-quarter">
+                                    <select name="day" id="day" class="js-chosen-select">
+                                        <option>DD</option>
+                                        <option value="01">1</option>
+                                        <option value="02">2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__item lap-custom-radio">
+                            <input id="male" type="radio" name="gender" value="male" class="radio-sex"><label for="male" class="radio-label radio-label--male"><span>Male</span></label><input id="female" type="radio" name="gender" value="female" class="radio-sex"><label for="female" class="radio-label radio-label--female"><span>Female</span></label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="form-fields__item">
+                    <i class="icons-form icon-address"></i>
+                    <input type="text" class="input-text" id="address" name="address" placeholder="Address">
+                    <label for="address" class="label-helper">Address</label>
+
+                </div>
+                <div class="grid">
+                    <div class="grid__item lap-one-third">
+                        <div class="form-fields__item">
+                            <input type="text" class="input-text" id="postcode" name="postcode" placeholder="Postcode">
+                            <label for="postcode" class="label-helper">Postcode</label>
+                        </div>
+                    </div>
+                    <div class="grid__item lap-two-thirds">
+                        <div class="form-fields__item">
+                            <input type="text" class="input-text" id="city" name="city" placeholder="City">
+                            <label for="city" class="label-helper">City</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="grid__item two-thirds lap-three-quarters">
+                        <div class="form-fields__item">
+                            <select name="country" id="country" class="js-chosen-select" data-placeholder="Country">
+                                <option value="belgium" class="flag flag-bel" data-img-src="images/form/flags/belgium.png">Belgium</option>
+                                <option value="sweden" class="flag flag-swe" data-img-src="images/form/flags/sweden.png">Sweden</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid__item one-third lap-one-quarter">
+                        <div class="form-fields__item">
+                            <select name="currency" id="currency" class="js-chosen-select">
+                                <option value="euro">Eur</option>
+                                <option value="pound">Pound</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid grid--narrow">
+                    <div class="grid__item one-quarter lap-one-quarter">
+                        <div class="form-fields__item">
+                            <select name="prefix-phone" id="prefix-phone" class="js-chosen-select signup-form__select-icon signup-form__prefix select-round-left" >
+                                <option>Prefix</option>
+                                <option value="+34" selected>+34</option>
+                                <option value="+33">+33</option>
+                                <option value="+32">+32</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid__item three-quarters lap-three-quarters">
+                        <div class="form-fields__item">
+                            <input type="text" class="input-text input-text--round-right" id="phone" name="phone" placeholder="Phone number">
+                            <label for="phone" class="label-helper">Phone Number</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-fields__item text--center">
+                    <input id="terms" name="terms" type="checkbox" checked />
+                    <label for="terms" class="text-white">
+                        <small>I have read and agree to the
+                            <a href="#" class="underline text-white">terms & conditions</a>.
+                        </small>
+                    </label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn--full btn--large" ng-disabled="signupForm.$invalid">Sign Up</button>
+
+        </fieldset>
+
+    </form>
+</div>
+
+<script>
+    // some jQuery plugins
+    $(document).ready(function(){
+        console.log( 'ready!' );
+        var mq = window.matchMedia( "(min-width: 800px)" );
+        if (mq.matches) {
+            // window width is at least 800px
+            $('.js-chosen-select').chosen({
+                inherit_select_classes: true,
+                width: '100%'
+            });
+        }
+    });
+
+</script>

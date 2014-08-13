@@ -1,0 +1,48 @@
+html {
+  background:#f0ffff url("../images/bg/main-bg.jpg") repeat 0 1px;
+  font-family: $font-family-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #67645d;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  &:before,
+  &:after {
+    position: absolute;
+    background-image: url("../images/bg/sign_up_sprite.png");
+    content: "";
+  }
+  // cloud left
+  &:before {
+    left: 0;
+    top: 82px;
+    width: 48px;
+    height: 26px;
+    background-position: -694px -326px;
+  }
+  // cloud right
+  &:after {
+    right: 0;
+    top: 35px;
+    width: 55px;
+    height: 38px;
+    background-position: -688px -268px;
+  }
+  @media screen and (min-width: 801px) {
+    background: url("../images/bg/rays.png") top center no-repeat,url("../images/bg/main-bg.jpg") 0 0 repeat ;
+    // cloud left
+    &:before {
+        background: none;
+    }
+    // cloud right
+    &:after {
+      background: none;
+    }
+  }
+
+}
+
+body {
+  padding: 0 10px;
+
+}
